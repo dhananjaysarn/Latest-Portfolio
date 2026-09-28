@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "./styles/portfolio.css";
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --portfolio-canvas: #0b0d10;
+  --portfolio-surface: #12161b;
+  --portfolio-ink: #f4f5f6;
+  --portfolio-muted: #a0a8b2;
+  --portfolio-accent: #8bf0d0;
+  --portfolio-line: rgb(255 255 255 / 12%);
+  --portfolio-radius-card: 1.25rem;
+  --portfolio-shadow-elevated: 0 24px 80px rgb(0 0 0 / 28%);
+  --portfolio-motion-fast: 160ms;
+  --portfolio-motion-standard: 280ms;
+  --portfolio-layer-header: 20;
+  --portfolio-layer-overlay: 40;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --portfolio-canvas: #f4f5f2;
+  --portfolio-surface: #ffffff;
+  --portfolio-ink: #15191c;
+  --portfolio-muted: #58636b;
+  --portfolio-accent: #08795f;
+  --portfolio-line: rgb(14 31 28 / 14%);
+  --portfolio-shadow-elevated: 0 24px 80px rgb(22 33 29 / 12%);
+}
+
+@theme {
+  --color-canvas: var(--portfolio-canvas);
+  --color-surface: var(--portfolio-surface);
+  --color-ink: var(--portfolio-ink);
+  --color-muted: var(--portfolio-muted);
+  --color-accent: var(--portfolio-accent);
+  --radius-card: var(--portfolio-radius-card);
+  --shadow-elevated: var(--portfolio-shadow-elevated);
+  --duration-fast: var(--portfolio-motion-fast);
+  --duration-standard: var(--portfolio-motion-standard);
+  --z-index-header: var(--portfolio-layer-header);
+  --z-index-overlay: var(--portfolio-layer-overlay);
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--portfolio-canvas);
+  color: var(--portfolio-ink);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
